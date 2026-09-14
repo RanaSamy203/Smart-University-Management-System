@@ -1,3 +1,4 @@
+package university.models;
 // Abstract class that represents a general assessment in the university system.
 // It is the parent class for Exam, Assignment, and Project.
 public abstract class Assessment {
