@@ -1,10 +1,8 @@
+package src.university.services;
 
-        package university.services;
-
-import university.models.Assessment;
-import university.models.Course;
-import university.models.Grade;
-import university.models.Student;
+import src.university.models.Course;
+import src.university.models.Grade;
+import src.university.models.Student;
 
 import java.util.ArrayList;
 

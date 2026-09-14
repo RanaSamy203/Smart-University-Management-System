@@ -1,3 +1,5 @@
+package src.university.models;
+
 // Assignment is a type of Assessment.
 // It inherits the common properties and methods from Assessment.
 public class Assignment extends Assessment {

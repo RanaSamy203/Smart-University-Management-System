@@ -1,3 +1,8 @@
+package src.university.models;
+
+import src.university.models.Department;
+import src.university.models.Professor;
+
 public class Course {
     private String courseID;
     private String courseName;

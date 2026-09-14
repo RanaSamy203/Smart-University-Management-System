@@ -1,3 +1,7 @@
+package src.university.models;
+
+import src.university.models.Assessment;
+
 // Exam is a type of Assessment.
 // It inherits the common properties and methods from Assessment.
 public class Exam extends Assessment {

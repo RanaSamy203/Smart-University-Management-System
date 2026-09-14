@@ -1,3 +1,5 @@
+package src.university.models;
+
 // Grade represents the result/score of a student
 // in a specific assessment for a specific course.
 public class Grade {

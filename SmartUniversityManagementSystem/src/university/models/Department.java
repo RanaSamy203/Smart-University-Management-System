@@ -1,4 +1,4 @@
-package models;
+package src.university.models;
 public class Department {
     private String departmentID;
     private String name;
