@@ -134,7 +134,7 @@ public class ConsoleUI {
 
     private void doAddStudent() {
         System.out.println("\n-- Add Student --");
-        String id           = input.readNonEmptyString("Student ID   : ");
+        int id           = input.readInt("Student ID   : ");
         String name         = input.readNonEmptyString("Full Name    : ");
         String email        = input.readNonEmptyString("Email        : ");
         String phone        = input.readNonEmptyString("Phone        : ");
@@ -154,7 +154,7 @@ public class ConsoleUI {
         int choice = input.readInt("Choose: ");
 
         if (choice == 1) {
-            String id = input.readNonEmptyString("Enter Student ID: ");
+            int id = input.readInt("Enter Student ID: ");
             try {
                 Student s = studentService.searchStudent(id);
                 if (s != null) s.printDetails();
@@ -178,7 +178,7 @@ public class ConsoleUI {
 
     private void doUpdateStudent() {
         System.out.println("\n-- Update Student --");
-        String id = input.readNonEmptyString("Enter Student ID to update: ");
+        int id = input.readInt("Enter Student ID to update: ");
         try {
             Student s = studentService.searchStudent(id);
             if (s == null) { System.out.println("-> Student not found."); return; }
@@ -203,7 +203,7 @@ public class ConsoleUI {
 
     private void doDeleteStudent() {
         System.out.println("\n-- Delete Student --");
-        String id = input.readNonEmptyString("Enter Student ID to delete: ");
+        int id = input.readInt("Enter Student ID to delete: ");
         boolean confirm = input.readBoolean("Are you sure you want to delete student " + id + "?");
         if (confirm) {
             studentService.deleteStudent(id);
@@ -252,7 +252,7 @@ public class ConsoleUI {
 
     private void doAddProfessor() {
         System.out.println("\n-- Add Professor --");
-        String id             = input.readNonEmptyString("Professor ID      : ");
+         int id             = input.readInt("Professor ID      : ");
         String name           = input.readNonEmptyString("Full Name         : ");
         String email          = input.readNonEmptyString("Email             : ");
         String phone          = input.readNonEmptyString("Phone             : ");
@@ -269,7 +269,7 @@ public class ConsoleUI {
 
     private void doSearchProfessor() {
         System.out.println("\n-- Search Professor --");
-        String id = input.readNonEmptyString("Enter Professor ID: ");
+        int id = input.readInt("Enter Professor ID: ");
         Professor p = studentService.searchProfessor(id);
         if (p != null) p.printDetails();
         else System.out.println("-> No professor found with ID: " + id);
@@ -277,7 +277,7 @@ public class ConsoleUI {
 
     private void doUpdateProfessor() {
         System.out.println("\n-- Update Professor --");
-        String id = input.readNonEmptyString("Enter Professor ID to update: ");
+        int id = input.readInt("Enter Professor ID to update: ");
         Professor p = studentService.searchProfessor(id);
         if (p == null) { System.out.println("-> Professor not found."); return; }
 
@@ -298,7 +298,7 @@ public class ConsoleUI {
 
     private void doDeleteProfessor() {
         System.out.println("\n-- Delete Professor --");
-        String id = input.readNonEmptyString("Enter Professor ID to delete: ");
+        int id  = input.readInt("Enter Professor ID to delete: ");
         boolean confirm = input.readBoolean("Are you sure?");
         if (confirm) {
             studentService.deleteProfessor(id);
@@ -346,7 +346,7 @@ public class ConsoleUI {
         String courseName = input.readNonEmptyString("Course Name      : ");
         int    credits    = input.readInt("Credit Hours     : ");
         int    maxStudents = input.readInt("Max Students     : ");
-        String profId     = input.readNonEmptyString("Professor ID     : ");
+        int  profId     = input.readInt("Professor ID     : ");
         String deptId     = input.readNonEmptyString("Department ID    : ");
         String deptName   = input.readNonEmptyString("Department Name  : ");
         String deptDesc   = input.readNonEmptyString("Department Desc  : ");
@@ -441,7 +441,7 @@ public class ConsoleUI {
 
     private void doRegisterStudent() {
         System.out.println("\n-- Register Student --");
-        String studentId = input.readNonEmptyString("Student ID : ");
+        int  studentId = input.readInt("Student ID : ");
         String courseId  = input.readNonEmptyString("Course ID  : ");
 
         try {
@@ -460,7 +460,7 @@ public class ConsoleUI {
 
     private void doDropCourse() {
         System.out.println("\n-- Drop Course --");
-        String studentId = input.readNonEmptyString("Student ID : ");
+        int  studentId = input.readInt("Student ID : ");
         String courseId  = input.readNonEmptyString("Course ID  : ");
 
         try {
@@ -479,7 +479,7 @@ public class ConsoleUI {
 
     private void doViewStudentCourses() {
         System.out.println("\n-- View Student Courses --");
-        String studentId = input.readNonEmptyString("Student ID: ");
+        int  studentId = input.readInt("Student ID: ");
         try {
             Student s = studentService.searchStudent(studentId);
             if (s == null) { System.out.println("-> Student not found."); return; }
@@ -569,7 +569,7 @@ public class ConsoleUI {
 
     private void doAddGrade() {
         System.out.println("\n-- Add Grade --");
-        String studentId    = input.readNonEmptyString("Student ID    : ");
+       int studentId    = input.readInt("Student ID    : ");
         String courseId     = input.readNonEmptyString("Course ID     : ");
         String assessmentId = input.readNonEmptyString("Assessment ID : ");
         double score        = input.readDouble("Score         : ");
@@ -594,7 +594,7 @@ public class ConsoleUI {
 
     private void doViewGrades() {
         System.out.println("\n-- View Grades --");
-        String studentId = input.readNonEmptyString("Student ID: ");
+        int  studentId = input.readInt("Student ID: ");
         try {
             Student s = studentService.searchStudent(studentId);
             if (s == null) { System.out.println("-> Student not found."); return; }
@@ -606,7 +606,7 @@ public class ConsoleUI {
 
     private void doCalculateGPA() {
         System.out.println("\n-- Calculate GPA --");
-        String studentId = input.readNonEmptyString("Student ID: ");
+        int  studentId = input.readInt("Student ID: ");
         try {
             Student s = studentService.searchStudent(studentId);
             if (s == null) { System.out.println("-> Student not found."); return; }
@@ -619,7 +619,7 @@ public class ConsoleUI {
 
     private void doViewResult() {
         System.out.println("\n-- View Result --");
-        String studentId = input.readNonEmptyString("Student ID: ");
+        int studentId = input.readInt("Student ID: ");
         String courseId  = input.readNonEmptyString("Course ID : ");
         try {
             Student s = studentService.searchStudent(studentId);
@@ -660,7 +660,7 @@ public class ConsoleUI {
 
     private void doMakePayment() {
         System.out.println("\n-- Make Payment --");
-        String studentId = input.readNonEmptyString("Student ID  : ");
+        int  studentId = input.readInt("Student ID  : ");
         double amount    = input.readDouble("Amount      : ");
 
         try {
@@ -691,7 +691,7 @@ public class ConsoleUI {
 
     private void doViewRemainingFees() {
         System.out.println("\n-- Remaining Fees --");
-        String studentId = input.readNonEmptyString("Student ID: ");
+        int  studentId = input.readInt("Student ID: ");
         try {
             Student s = studentService.searchStudent(studentId);
             if (s == null) { System.out.println("-> Student not found."); return; }
@@ -729,7 +729,7 @@ public class ConsoleUI {
 
     private void doStudentReport() {
         System.out.println("\n-- Student Report --");
-        String studentId = input.readNonEmptyString("Student ID: ");
+        int studentId = input.readInt("Student ID: ");
         try {
             Student s = studentService.searchStudent(studentId);
             if (s == null) { System.out.println("-> Student not found."); return; }
@@ -751,7 +751,7 @@ public class ConsoleUI {
 
     private void doAcademicReport() {
         System.out.println("\n-- Academic Report --");
-        String studentId = input.readNonEmptyString("Student ID: ");
+        int  studentId = input.readInt("Student ID: ");
         try {
             Student s = studentService.searchStudent(studentId);
             if (s == null) { System.out.println("-> Student not found."); return; }
